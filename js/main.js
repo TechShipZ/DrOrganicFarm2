@@ -20,6 +20,10 @@ function applyLang(lang) {
     document.title = lang === 'en' ? t.getAttribute('data-en') : t.getAttribute('data-hi');
   }
   try { localStorage.setItem('lang', lang); } catch (e) {}
+  // re-measure any open FAQ panels (text length differs per language)
+  document.querySelectorAll('.faq-i.open .faq-a').forEach(function (a) {
+    a.style.maxHeight = a.scrollHeight + 'px';
+  });
 }
 function setLang(l) { applyLang(l); }
 
