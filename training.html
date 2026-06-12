@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title data-en="Training | Dr. Organic Vermicompost Farm">प्रशिक्षण | डॉ. ऑर्गेनिक वर्मीकम्पोस्ट फार्म</title>
+<meta name="description" content="निःशुल्क वर्मीकम्पोस्ट प्रशिक्षण — 1-दिवसीय फार्म विज़िट, ₹999 ऑनलाइन कोर्स, और अपनी इकाई शुरू करने का पूरा सहयोग।">
+<meta name="theme-color" content="#faf8f4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,600;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg class="symbols" xmlns="http://www.w3.org/2000/svg"><symbol id="wa-ic" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol></svg>
+<nav class="nav" id="nav">
+  <a class="nav-brand" href="index.html">
+    <div class="nav-icon">🌱</div>
+    <div class="nav-name">
+      <span data-en="Dr. Organic Farm">डॉ. ऑर्गेनिक फार्म</span>
+      <small data-en="Sundarpura, Jaipur">सुंदरपुरा, जयपुर</small>
+    </div>
+  </a>
+  <div class="nav-right">
+    <div class="lang-switch" role="group" aria-label="भाषा / Language">
+      <button class="lang-btn active" id="bHi" onclick="setLang('hi')">हिंदी</button>
+      <button class="lang-btn" id="bEn" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="scrim" id="scrim" onclick="toggleMenu()"></div>
+<div class="drawer" id="drawer">
+  <ul>
+    <li><a href="index.html" id="lnk-home"><span class="dic">🏠</span><span data-en="Home">होम</span></a></li>
+    <li><a href="products.html" id="lnk-products"><span class="dic">🌿</span><span data-en="Products">उत्पाद</span></a></li>
+    <li><a href="training.html" id="lnk-training"><span class="dic">🎓</span><span data-en="Training">प्रशिक्षण</span></a></li>
+    <li><a href="about.html" id="lnk-about"><span class="dic">👨‍🔬</span><span data-en="About Us">हमारे बारे में</span></a></li>
+    <li><a href="gallery.html" id="lnk-gallery"><span class="dic">📸</span><span data-en="Gallery">गैलरी</span></a></li>
+    <li><a href="contact.html" id="lnk-contact"><span class="dic">📞</span><span data-en="Contact">संपर्क</span></a></li>
+  </ul>
+</div>
+<!-- ══ PAGE HERO ══ -->
+<section class="phero">
+  <div class="crumb rv"><a href="index.html" data-en="Home">होम</a> / <span data-en="Training">प्रशिक्षण</span></div>
+  <h1 class="phero-h hd rv"><span data-en="Learn. Earn.">सीखो। कमाओ।</span> <em data-en="Grow.">बढ़ो।</em></h1>
+  <p class="phero-sub rv" data-en="From just 10×3 ft of space to ₹50,000/month — over 20,000 farmers have walked this path with us. Training is free, support is lifelong.">सिर्फ 10×3 फीट जगह से ₹50,000/माह तक — 20,000 से अधिक किसान हमारे साथ यह राह चल चुके हैं। प्रशिक्षण निःशुल्क है, सहयोग जीवन भर।</p>
+</section>
+
+<!-- ══ PROGRAMS ══ -->
+<section class="sec" style="padding-top:6px">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="tcard rv">
+      <div class="tprice" data-en="FREE">निःशुल्क</div>
+      <div class="tname" data-en="1-Day Farm Training">1-दिवसीय फार्म प्रशिक्षण</div>
+      <p class="tdesc" data-en="Come to Sundarpura Farm, Jaipur. One full day of hands-on learning — bed making, feeding, harvesting, packaging. Certificate and meals included. No charge, ever.">सुंदरपुरा फार्म, जयपुर आइए। एक पूरा दिन व्यावहारिक सीख — बेड बनाना, खिलाना, खाद निकालना, पैकेजिंग। प्रमाण-पत्र और भोजन शामिल। कभी कोई शुल्क नहीं।</p>
+      <ul class="plist" style="margin-bottom:14px">
+        <li data-en="Live demonstration on actual beds">वास्तविक बेड पर लाइव प्रदर्शन</li>
+        <li data-en="Ask Dr. Sharvan ji directly">डॉ. शरवन जी से सीधे प्रश्न पूछें</li>
+        <li data-en="Certificate of participation">सहभागिता प्रमाण-पत्र</li>
+        <li data-en="Meals included">भोजन शामिल</li>
+      </ul>
+      <a class="tbtn" href="https://wa.me/916377544290?text=नमस्ते डॉ. शरवन जी, निःशुल्क फार्म प्रशिक्षण के लिए पंजीकरण करना है।" target="_blank" rel="noopener">📱 <span data-en="Register free">निःशुल्क पंजीकरण</span></a>
+    </div>
+
+    <div class="tcard feat rv">
+      <div class="feat-tag" data-en="Most popular">सबसे लोकप्रिय</div>
+      <div class="tprice">₹999</div>
+      <div class="tname" data-en="Complete Online Course">संपूर्ण ऑनलाइन कोर्स</div>
+      <p class="tdesc" data-en="Can't travel to Jaipur? Learn the entire vermicompost business from home — in Hindi and English. Lifetime access, live doubt sessions, private WhatsApp group.">जयपुर नहीं आ सकते? घर बैठे पूरा वर्मीकम्पोस्ट व्यवसाय सीखें — हिंदी और अंग्रेजी में। आजीवन एक्सेस, लाइव संदेह सत्र, निजी व्हाट्सऐप ग्रुप।</p>
+      <ul class="plist" style="margin-bottom:14px">
+        <li data-en="Step-by-step video modules">चरण-दर-चरण वीडियो मॉड्यूल</li>
+        <li data-en="Lifetime access — learn at your pace">आजीवन एक्सेस — अपनी गति से सीखें</li>
+        <li data-en="Live doubt-clearing sessions">लाइव संदेह-समाधान सत्र</li>
+        <li data-en="Private WhatsApp support group">निजी व्हाट्सऐप सहायता समूह</li>
+      </ul>
+      <a class="tbtn" href="https://wa.me/916377544290?text=नमस्ते डॉ. शरवन जी, ₹999 ऑनलाइन कोर्स में दाखिला लेना है।" target="_blank" rel="noopener"><span data-en="Enrol now →">अभी एनरोल करें →</span></a>
+    </div>
+
+    <div class="tcard rv">
+      <div class="tprice" data-en="Full Support">पूरा सहयोग</div>
+      <div class="tname" data-en="Start Your Own Unit">अपनी इकाई शुरू करें</div>
+      <p class="tdesc" data-en="The complete package: earthworm supply, bed setup guidance, production training, and marketing support — we stay with you until your income is steady.">संपूर्ण पैकेज: केंचुओं की आपूर्ति, बेड सेटअप मार्गदर्शन, उत्पादन प्रशिक्षण और मार्केटिंग सहायता — जब तक आपकी आमदनी स्थिर न हो, हम साथ रहते हैं।</p>
+      <ul class="plist" style="margin-bottom:14px">
+        <li data-en="2000/kg earthworms supplied">2000/किलो केंचुओं की आपूर्ति</li>
+        <li data-en="Bed design for your space">आपकी जगह के अनुसार बेड डिज़ाइन</li>
+        <li data-en="Buyer connections for your produce">आपकी खाद के लिए खरीदार संपर्क</li>
+        <li data-en="Ongoing mentorship">निरंतर मेंटरशिप</li>
+      </ul>
+      <a class="tbtn" href="https://wa.me/916377544290?text=नमस्ते डॉ. शरवन जी, अपनी वर्मीकम्पोस्ट इकाई शुरू करनी है।" target="_blank" rel="noopener">📱 <span data-en="Get started">शुरू करें</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CURRICULUM ══ -->
+<div class="band">
+  <div class="band-in">
+    <div class="eyebrow rv" data-en="What you learn">आप क्या सीखेंगे</div>
+    <h2 class="sec-h hd rv"><span data-en="The complete">संपूर्ण</span> <em data-en="A-to-Z process">A से Z प्रक्रिया</em></h2>
+    <div style="height:16px"></div>
+    <div class="steps">
+      <div class="step rv"><div class="step-n">1</div><div class="step-body"><div class="step-t" data-en="Bed construction">बेड निर्माण</div><p class="step-d" data-en="Site selection, size, shade, and drainage — building beds that last years.">स्थान चयन, आकार, छाया और जल निकासी — वर्षों चलने वाले बेड बनाना।</p></div></div>
+      <div class="step rv"><div class="step-n">2</div><div class="step-body"><div class="step-t" data-en="Raw material &amp; feeding">कच्चा माल और खुराक</div><p class="step-d" data-en="Cow dung preparation, pre-composting, layering, and feeding schedule.">गोबर की तैयारी, प्री-कम्पोस्टिंग, परतें और खुराक का समय।</p></div></div>
+      <div class="step rv"><div class="step-n">3</div><div class="step-body"><div class="step-t" data-en="Worm care">केंचुओं की देखभाल</div><p class="step-d" data-en="Moisture, temperature, enemies (ants, rats), and how worms multiply.">नमी, तापमान, दुश्मन (चींटी, चूहे), और केंचुए कैसे बढ़ते हैं।</p></div></div>
+      <div class="step rv"><div class="step-n">4</div><div class="step-body"><div class="step-t" data-en="Harvesting &amp; sieving">खाद निकालना और छानना</div><p class="step-d" data-en="When compost is ready, separation techniques, and quality checks.">खाद कब तैयार है, अलग करने की तकनीक, और गुणवत्ता जाँच।</p></div></div>
+      <div class="step rv"><div class="step-n">5</div><div class="step-body"><div class="step-t" data-en="Packaging &amp; selling">पैकेजिंग और बिक्री</div><p class="step-d" data-en="Bagging, pricing, finding buyers — nurseries, farmers, online platforms.">बैग भरना, मूल्य निर्धारण, खरीदार खोजना — नर्सरी, किसान, ऑनलाइन।</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ INCOME PATH ══ -->
+<section class="sec">
+  <div class="eyebrow rv" data-en="The income path">आमदनी का रास्ता</div>
+  <h2 class="sec-h hd rv"><span data-en="From one bed to">एक बेड से</span> <em data-en="a business">एक व्यवसाय तक</em></h2>
+  <p class="sec-sub rv" data-en="Realistic numbers from farmers we've trained. Income grows with beds and experience.">हमारे प्रशिक्षित किसानों के वास्तविक आँकड़े। बेड और अनुभव के साथ आमदनी बढ़ती है।</p>
+  <div style="overflow-x:auto" class="rv">
+    <table class="utable">
+      <tr><th data-en="Stage">चरण</th><th data-en="Beds">बेड</th><th data-en="Monthly income*">मासिक आमदनी*</th></tr>
+      <tr><td data-en="Beginner (0–6 months)">शुरुआत (0–6 माह)</td><td>1–5</td><td>₹5,000–15,000</td></tr>
+      <tr><td data-en="Growing (6–12 months)">विकास (6–12 माह)</td><td>5–15</td><td>₹15,000–35,000</td></tr>
+      <tr><td data-en="Established (1–2 years)">स्थापित (1–2 वर्ष)</td><td>15–30</td><td>₹35,000–50,000+</td></tr>
+    </table>
+  </div>
+  <p class="rv" style="font-size:11.5px;color:var(--ink-light);margin-top:8px" data-en="*Indicative figures — actual income depends on local demand, quality, and effort.">*सांकेतिक आँकड़े — वास्तविक आमदनी स्थानीय माँग, गुणवत्ता और मेहनत पर निर्भर करती है।</p>
+</section>
+
+<!-- ══ FAQ ══ -->
+<div class="band">
+  <div class="band-in">
+    <div class="eyebrow rv" data-en="Training questions">प्रशिक्षण संबंधी प्रश्न</div>
+    <h2 class="sec-h hd rv"><span data-en="Before you">आने से पहले</span> <em data-en="come">जान लें</em></h2>
+    <div style="height:14px"></div>
+    <div class="faq">
+      <div class="faq-i rv">
+        <button class="faq-q" onclick="toggleFaq(this)"><span data-en="Is the farm training really free? What's the catch?">क्या फार्म प्रशिक्षण सच में निःशुल्क है? कोई शर्त?</span><span class="ar">▾</span></button>
+        <div class="faq-a"><p data-en="100% free, no catch. Dr. Sharvan ji's mission is to spread organic farming. You are never required to buy anything. Certificate and meals are also free.">100% निःशुल्क, कोई शर्त नहीं। डॉ. शरवन जी का मिशन जैविक खेती फैलाना है। कुछ भी खरीदना कभी अनिवार्य नहीं। प्रमाण-पत्र और भोजन भी निःशुल्क।</p></div>
+      </div>
+      <div class="faq-i rv">
+        <button class="faq-q" onclick="toggleFaq(this)"><span data-en="How do I reach the farm?">फार्म तक कैसे पहुँचें?</span><span class="ar">▾</span></button>
+        <div class="faq-a"><p data-en="Village Sundarpura, Kishangarh Renwal, Phulera tehsil, Jaipur district — about 50 km from Jaipur city. WhatsApp us for exact directions and the next training date.">गाँव सुंदरपुरा, किशनगढ़ रेनवाल, फुलेरा तहसील, जयपुर जिला — जयपुर शहर से लगभग 50 किमी। सटीक दिशा और अगली प्रशिक्षण तिथि के लिए व्हाट्सऐप करें।</p></div>
+      </div>
+      <div class="faq-i rv">
+        <button class="faq-q" onclick="toggleFaq(this)"><span data-en="I have no farming background. Can I still do this?">मेरी कोई खेती की पृष्ठभूमि नहीं। क्या मैं फिर भी कर सकता हूँ?</span><span class="ar">▾</span></button>
+        <div class="faq-a"><p data-en="Absolutely. Many of our most successful trainees were teachers, shopkeepers, and homemakers. Vermicomposting needs care and consistency, not prior experience.">बिल्कुल। हमारे सबसे सफल प्रशिक्षुओं में शिक्षक, दुकानदार और गृहिणियाँ शामिल हैं। वर्मीकम्पोस्टिंग को देखभाल और निरंतरता चाहिए, पूर्व अनुभव नहीं।</p></div>
+      </div>
+      <div class="faq-i rv">
+        <button class="faq-q" onclick="toggleFaq(this)"><span data-en="What's the minimum investment to start?">शुरू करने के लिए न्यूनतम निवेश कितना?</span><span class="ar">▾</span></button>
+        <div class="faq-a"><p data-en="A single 10×3 ft bed with worms and cow dung can start under ₹5,000–8,000. Most families start small and reinvest earnings into more beds.">केंचुओं और गोबर सहित एक 10×3 फीट बेड ₹5,000–8,000 से कम में शुरू हो सकता है। अधिकांश परिवार छोटे से शुरू करके कमाई को और बेड में लगाते हैं।</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<section style="padding:44px 0 50px">
+  <div class="cta rv">
+    <div class="eyebrow" data-en="Seats fill fast">सीटें जल्दी भरती हैं</div>
+    <h2 class="cta-h"><span data-en="Book your training">अपना प्रशिक्षण</span><br><em data-en="date today">आज ही बुक करें</em></h2>
+    <p class="cta-sub" data-en="Send a message — get the next available training date instantly.">मैसेज भेजें — अगली उपलब्ध प्रशिक्षण तिथि तुरंत पाएं।</p>
+    <a class="b-wa" href="https://wa.me/916377544290?text=नमस्ते डॉ. शरवन जी, अगली प्रशिक्षण तिथि बताएं।" target="_blank" rel="noopener">
+      <svg class="ic-svg" style="width:18px;height:18px;fill:#fff" viewBox="0 0 24 24"><use href="#wa-ic"/></svg>
+      <span data-en="Ask next training date">अगली तिथि पूछें</span>
+    </a>
+  </div>
+</section>
+<footer class="footer">
+  <div class="f-in">
+    <div class="f-logo">
+      <div class="f-icon">🌱</div>
+      <span class="f-name" data-en="Dr. Organic Vermicompost Farm">डॉ. ऑर्गेनिक वर्मीकम्पोस्ट फार्म</span>
+    </div>
+    <p class="f-desc" data-en="India's most trusted vermicompost farm. Science-backed organic inputs since 2020.">भारत का सबसे विश्वसनीय वर्मीकम्पोस्ट फार्म। 2020 से विज्ञान-आधारित जैविक उत्पाद।</p>
+    <div class="f-cols">
+      <div class="f-col">
+        <h4 data-en="Pages">पेज</h4>
+        <ul>
+          <li><a href="index.html" data-en="Home">होम</a></li>
+          <li><a href="products.html" data-en="Products">उत्पाद</a></li>
+          <li><a href="training.html" data-en="Training">प्रशिक्षण</a></li>
+          <li><a href="about.html" data-en="About">हमारे बारे में</a></li>
+          <li><a href="gallery.html" data-en="Gallery">गैलरी</a></li>
+          <li><a href="contact.html" data-en="Contact">संपर्क</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4 data-en="Social">सोशल मीडिया</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@dr.organicfarming1467" target="_blank" rel="noopener">▶ YouTube</a></li>
+          <li><a href="https://www.instagram.com/dr_sharvan_yadav/" target="_blank" rel="noopener">📸 Instagram 145K</a></li>
+          <li><a href="https://www.facebook.com/p/Dr-Organic-Vermicompst-Farm-100064180596347/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://wa.me/916377544290" target="_blank" rel="noopener">💬 WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <p class="f-copy" data-en="© 2024 Dr. Organic Vermicompost Farm · Sundarpura, Kishangarh Renwal, Phulera, Jaipur — 303602">© 2024 डॉ. ऑर्गेनिक वर्मीकम्पोस्ट फार्म · सुंदरपुरा, किशनगढ़ रेनवाल, फुलेरा, जयपुर — 303602</p>
+      <p class="f-tag">Heal the Soil. Feed the Nation. 🌱</p>
+    </div>
+  </div>
+</footer>
+<div class="bbar">
+  <a class="bb-call" href="tel:+916377544290">
+    <svg class="ic-svg" style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span data-en="Call Now">कॉल करें</span>
+  </a>
+  <a class="bb-wa" href="https://wa.me/916377544290?text=नमस्ते डॉ. शरवन जी 🙏" target="_blank" rel="noopener">
+    <svg class="ic-svg" style="width:17px;height:17px;fill:#fff" viewBox="0 0 24 24"><use href="#wa-ic"/></svg>
+    <span data-en="WhatsApp">व्हाट्सऐप</span>
+  </a>
+</div>
+<script src="js/main.js"></script>
+<script>document.getElementById("lnk-training").classList.add("now");</script></body></html>
