@@ -348,3 +348,47 @@ html[lang="hi"] .cta-h em{font-style:normal}
   .rv,.tst-track{animation:none;transition:none}
   .rv{opacity:1;transform:none}
 }
+
+/* ── 3D EARTHWORM SCROLLYTELLING ── */
+.w3{height:460vh;position:relative;background:linear-gradient(var(--cream) 0%,var(--sage-soft) 30%,var(--sand) 70%,var(--cream) 100%)}
+.w3-pin{position:sticky;top:0;height:100vh;overflow:hidden}
+#w3c{position:absolute;inset:0;width:100%;height:100%;display:block}
+.w3-shadow{position:absolute;left:50%;top:60%;width:56%;height:8%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(42,36,32,.20),transparent 70%);filter:blur(3px);pointer-events:none}
+.w3-title{position:absolute;top:74px;left:20px;right:20px;text-align:center;pointer-events:none}
+.w3-title .eyebrow{margin-bottom:4px}
+.w3-title b{font-size:13px;color:var(--ink-mid);font-weight:600}
+.w3-stage{position:absolute;left:20px;right:20px;bottom:calc(96px + var(--safe-b));max-width:430px;opacity:0;pointer-events:none;will-change:opacity,transform}
+.w3-stage .eyebrow{margin-bottom:4px}
+.w3-h{font-size:23px;line-height:1.25;font-weight:700;margin-bottom:6px;color:var(--ink)}
+html[lang="en"] .w3-h{font-family:var(--sen)}
+.w3-h em{color:var(--sage-deep)}
+html[lang="en"] .w3-h em{font-style:italic}
+html[lang="hi"] .w3-h em{font-style:normal}
+.w3-d{font-size:13.5px;color:var(--ink-mid);line-height:1.75}
+.w3-stage .b-wa{margin-top:12px;max-width:280px;padding:13px 18px;font-size:14px}
+.w3-dots{position:absolute;right:13px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px}
+.w3-dot{width:7px;height:7px;border-radius:50%;background:var(--sand-dark);transition:all .3s var(--ease)}
+.w3-dot.on{background:var(--sage-deep);transform:scale(1.45)}
+.w3-hint{position:absolute;bottom:calc(74px + var(--safe-b));left:50%;transform:translateX(-50%);font-size:11px;font-weight:600;color:var(--ink-light);animation:w3hint 1.7s ease-in-out infinite;pointer-events:none}
+@keyframes w3hint{50%{transform:translate(-50%,6px)}}
+.w3-fb{display:none}
+/* graceful fallback if WebGL unavailable */
+.w3.no3d{height:auto;background:var(--sage-soft)}
+.w3.no3d .w3-pin{position:static;height:auto;padding:48px 0}
+.w3.no3d #w3c,.w3.no3d .w3-shadow,.w3.no3d .w3-dots,.w3.no3d .w3-hint,.w3.no3d .w3-title{display:none}
+.w3.no3d .w3-stage{position:static;opacity:1!important;transform:none!important;pointer-events:auto!important;max-width:680px;margin:0 auto;padding:18px 20px}
+.w3.no3d .w3-fb{display:block;text-align:center;font-size:64px;padding:10px 0 4px}
+@media(min-width:680px){
+  .w3-stage{left:calc(50% - 330px);max-width:380px;bottom:120px}
+  .w3-title{top:84px}
+}
+@media(prefers-reduced-motion:reduce){.w3-hint{animation:none}}
+
+/* ── FOUNDER PHOTO (drop images/founder.jpg — auto-appears, else SY avatar) ── */
+.fph{display:none}
+.fph.has{display:block;width:110px;height:110px;border-radius:50% 50% 50% 16%;overflow:hidden;margin:0 auto 14px;border:4px solid var(--sage-soft);position:relative;background:var(--sage-soft)}
+.fph.has img{width:100%;height:100%;object-fit:cover;display:block}
+.fph.has + .favatar{display:none}
+
+/* iOS dynamic-toolbar viewport fix */
+.w3-pin{height:100vh;height:100svh}
