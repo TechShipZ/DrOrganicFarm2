@@ -24,51 +24,71 @@
   var cam = new THREE.PerspectiveCamera(38, 1, 0.1, 60);
 
   // ── Lighting: warm key + cool fill + rim for wet highlight ──
-  scene.add(new THREE.HemisphereLight(0xfff3e4, 0x4a3826, 0.85));
-  var key = new THREE.DirectionalLight(0xfff1de, 1.0); key.position.set(2.2, 3.2, 2.6); scene.add(key);
-  var fill = new THREE.DirectionalLight(0xd8e8d0, 0.35); fill.position.set(-2.5, 1.2, -1.5); scene.add(fill);
-  var rim = new THREE.DirectionalLight(0xffffff, 0.5); rim.position.set(0, 2.5, -3.5); scene.add(rim);
+  scene.add(new THREE.HemisphereLight(0xfff3e4, 0x4a3826, 0.80));
+  var key = new THREE.DirectionalLight(0xfff1de, 1.05); key.position.set(2.2, 3.2, 2.6); scene.add(key);
+  var fill = new THREE.DirectionalLight(0xd8e8d0, 0.32); fill.position.set(-2.5, 1.2, -1.5); scene.add(fill);
+  var rim = new THREE.DirectionalLight(0xffffff, 0.85); rim.position.set(0, 2.8, -3.5); scene.add(rim);   // wet-sheen edge highlight
 
   // ── Procedural earthworm skin texture (segments + dorsal shading) ──
+  // Tuned to a real Eisenia fetida (red wiggler): rich red-brown/maroon body,
+  // deep annular grooves, buff "tiger" inter-segment banding, pale pink belly.
   function skinTexture() {
-    var c = document.createElement('canvas'); c.width = 1024; c.height = 128;
+    var W = 2048, H = 256;
+    var c = document.createElement('canvas'); c.width = W; c.height = H;
     var x = c.getContext('2d');
-    var g = x.createLinearGradient(0, 0, 1024, 0);          // along body
-    g.addColorStop(0.00, '#6e3d2e');                         // tail darker
-    g.addColorStop(0.45, '#9c5743');
-    g.addColorStop(0.60, '#a05c46');
-    g.addColorStop(1.00, '#7d4534');                         // head
-    x.fillStyle = g; x.fillRect(0, 0, 1024, 128);
-    var d = x.createLinearGradient(0, 0, 0, 128);            // dorsal dark / belly pale
-    d.addColorStop(0.00, 'rgba(48,22,16,.42)');
-    d.addColorStop(0.45, 'rgba(0,0,0,0)');
-    d.addColorStop(1.00, 'rgba(255,224,200,.22)');
-    x.fillStyle = d; x.fillRect(0, 0, 1024, 128);
-    for (var i = 0; i < 150; i++) {                          // ~150 annular segments
-      var px = i * 1024 / 150;
-      x.fillStyle = 'rgba(42,18,12,.34)'; x.fillRect(px, 0, 2.0, 128);
-      x.fillStyle = 'rgba(255,206,182,.12)'; x.fillRect(px + 2.4, 0, 1.2, 128);
+    // base colour along the body — deep maroon ends, brighter red-brown mid
+    var g = x.createLinearGradient(0, 0, W, 0);
+    g.addColorStop(0.00, '#54211a');                         // tail deep maroon
+    g.addColorStop(0.28, '#7a3024');
+    g.addColorStop(0.52, '#9b3d2c');                         // mid — brightest red-brown
+    g.addColorStop(0.72, '#883528');
+    g.addColorStop(1.00, '#5f271e');                         // head darker
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    // dorsal (top) dark & glossy, ventral (bottom) pale pink-buff — real worms
+    var d = x.createLinearGradient(0, 0, 0, H);
+    d.addColorStop(0.00, 'rgba(26,9,7,.58)');                // dark back
+    d.addColorStop(0.28, 'rgba(58,19,13,.20)');
+    d.addColorStop(0.52, 'rgba(0,0,0,0)');
+    d.addColorStop(0.80, 'rgba(240,196,168,.30)');
+    d.addColorStop(1.00, 'rgba(250,214,190,.46)');           // pale belly
+    x.fillStyle = d; x.fillRect(0, 0, W, H);
+    var SEG = 165;                                           // annular segments
+    var step = W / SEG;
+    // faint buff banding between segments — the "tiger worm" look
+    for (var b = 0; b < SEG; b += 2) {
+      x.fillStyle = 'rgba(206,158,110,.09)';
+      x.fillRect(b * step + 4.4, 0, step - 6.5, H);
     }
-    for (var s = 0; s < 700; s++) {                          // organic speckle
-      x.fillStyle = 'rgba(' + (Math.random() > .5 ? '255,210,190' : '40,18,12') + ',' + (Math.random() * .06) + ')';
-      x.fillRect(Math.random() * 1024, Math.random() * 128, 2, 2);
+    // deep grooves + raised ridge highlights for crisp segmentation
+    for (var i = 0; i < SEG; i++) {
+      var px = i * step;
+      x.fillStyle = 'rgba(28,9,6,.58)';   x.fillRect(px, 0, 2.6, H);        // groove
+      x.fillStyle = 'rgba(255,188,158,.17)'; x.fillRect(px + 3.0, 0, 1.5, H); // ridge
+    }
+    // organic speckle / pore detail
+    for (var s = 0; s < 1500; s++) {
+      var light = Math.random() > .5;
+      x.fillStyle = 'rgba(' + (light ? '255,198,172' : '32,12,8') + ',' + (Math.random() * .07) + ')';
+      x.fillRect(Math.random() * W, Math.random() * H, 2, 2);
     }
     var t = new THREE.CanvasTexture(c);
     t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.anisotropy = 4;
     return t;
   }
   var skin = skinTexture();
 
   var matBody = new THREE.MeshPhysicalMaterial({
-    map: skin, bumpMap: skin, bumpScale: 0.012,
-    roughness: 0.42, clearcoat: 0.75, clearcoatRoughness: 0.28,
+    map: skin, bumpMap: skin, bumpScale: 0.028,
+    roughness: 0.33, metalness: 0.0,
+    clearcoat: 0.92, clearcoatRoughness: 0.15,       // wet mucus sheen
     color: 0xffffff
   });
-  var matBand = new THREE.MeshPhysicalMaterial({
-    color: 0xd9a288, roughness: 0.5, clearcoat: 0.55, clearcoatRoughness: 0.3
+  var matBand = new THREE.MeshPhysicalMaterial({     // clitellum — buff/orange saddle
+    color: 0xe2b489, roughness: 0.4, clearcoat: 0.72, clearcoatRoughness: 0.2
   });
-  var matCap = new THREE.MeshPhysicalMaterial({
-    color: 0x86492f, roughness: 0.45, clearcoat: 0.7, clearcoatRoughness: 0.3
+  var matCap = new THREE.MeshPhysicalMaterial({      // blunt head/tail tips
+    color: 0x6c2c20, roughness: 0.34, clearcoat: 0.88, clearcoatRoughness: 0.18
   });
 
   // ── Body taper: thin tail → full mid → blunt head ──
